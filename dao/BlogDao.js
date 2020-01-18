@@ -82,7 +82,6 @@ function queryAllTags(success) {
 
 function queryBlogByTags(tagId, success) {
     let querySql = "select * from tag_blog_mapping where tag_id = ?;";
-    console.log(tagId);
     let params = [tagId];
 
     let connection = dbUtil.creatConnection();
