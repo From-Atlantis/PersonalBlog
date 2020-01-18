@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heartless</title>
+    <link rel="stylesheet" href="/iconfont/iconfont.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" href="/images/ico.jpg">
+    <script src="/js/vue.min.js"></script>
+    <script src="/js/axios.min.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="/" class="title">Greyの个人博客 - 技术博客</a>
+            <ul class="menu">
+                <li>
+                    <a href="/">
+                        <span class="iconfont">&#xe629;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/sitemap.html">
+                        <span class="iconfont">&#xe617;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/me.html">
+                        <span class="iconfont">&#xe60c;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/guestbook.html">
+                        <span class="iconfont">&#xe61d;</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- <div class="search_bar">
+                <input type="text" placeholder="请输入关键词">
+                <span class="iconfont search-btn">&#xe634;</span>
+            </div> -->
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="content_mid">
+            <div class="every_day" id="every-day">
+                <p>
+                    <span class="iconfont">&#xe6e4;</span>
+                </p>
+                <p class="proverb" v-html="getContent"></p>
+                <p class="author">
+                    <span style="float: left;">We all have the bottom line, and I may have crossed my own.</span>
+                    <span style="float: right;">——Camille</span>
+                </p>
+            </div>
+            <div class="article_list" id="article_list">
+                <div class="article" v-for="article in articleList">
+                    <a v-bind:href="article.link" class="article_title">{{article.title}}</a>
+                    <p class="article_content" v-html="article.content"></p>
+                    <div class=" article_foot">
+                        <span class="iconfont">&#xe60d;</span>
+                        <span class="foot_c">发表于 {{article.date}}</span>
+                        <span class="iconfont">&#xe633;</span>
+                        <span class="foot_c">阅读次数 {{article.views}}</span>
+                        <span class="iconfont">&#xe70b;</span>
+                        <span class="foot_c">标签 {{article.tags}}</span>
+                    </div>
+                </div>
+                <div class="page-tool">
+                    <ul>
+                        <li>
+                            <span class='iconfont prev' v-on:click="prevPage()">&#xe63a;</span>
+                        </li>
+                        <li v-for="pageNum in pageNumList" v-bind:class="{'now_page':(pageNum.text == page)}"
+                            v-on:click="jumpTo(pageNum.page)" v-html="pageNum.text"></li>
+                        <li>
+                            <span class='iconfont next' v-on:click="nextPage()">&#xe63a;</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="content_right" id="content_right">
+        <div class="right_module">
+            <div class="module_title">Grey</div>
+            <div class="nav" id="nav">
+                <div class="nav_c">
+                    <span class="nav_num">{{article_num}}</span>
+                    <span class="nav_name">文章</span>
+                </div>
+                <div class="nav_c">
+                    <span class="nav_num">{{categories_num}}</span>
+                    <span class="nav_name">分类</span>
+                </div>
+            </div>
+            <div class="link-author">
+                <span class="link">
+                    <a href="https://www.jianshu.com/u/fe59025be576" target="blank">
+                        <span class="iconfont">&#xe63d; </span>&nbsp;
+                        简书
+                    </a>
+                </span>
+                <span class="link">
+                    <a href="/">
+                        <span class="iconfont">&#xe612; </span>&nbsp;
+                        简历
+                    </a>
+                </span>
+                <span class="link">
+                    <a href="https://github.com/From-Atlantis" target="blank">
+                        <span class="iconfont">&#xe65e; </span>&nbsp;
+                        github
+                    </a>
+                </span>
+                <span class="link">
+                    <a href="https://juejin.im/user/5d907ee0f265da5bbe2a2729" target="blank">
+                        <span class="iconfont">&#xe63e;</span>&nbsp;
+                        掘金
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="foot_content">
+            <div class="copyright">
+                ©
+                <span>2020</span>
+                <span class="iconfont">&#xe64d;</span>
+                <span>Grey</span>
+            </div>
+            <div class="jishu">
+                <span class="iconfont">&#xe64d;</span>
+                <span>您是第 </span>
+                <span>9392</span>
+                <span> 个访问者</span>
+                <span class="iconfont">&#xe633;</span>
+                <span>总访问量 </span>
+                <span>{{visit_num}}</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/index.js"></script>
+    <script src="/js/base.js"></script>
+
+</body>
+
+</html>

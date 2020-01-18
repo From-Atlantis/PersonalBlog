@@ -1,0 +1,225 @@
+.blog_detail,
+.send_comments {
+    position: relative;
+    width: 710px;
+    margin: 90px auto 20px 20%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #fcc;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.blog_detail .blog_title {
+    /* background-color: #fcc; */
+    padding: 10px 0;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.blog_detail .blog_msg {
+    /* background-color: skyblue; */
+    padding: 10px 0;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+}
+
+.blog_detail .blog_msg .iconfont {
+    position: relative;
+    top: 1px;
+}
+
+.blog_detail .blog_msg .iconfont:nth-of-type(3) {
+    top: 2px;
+}
+
+.blog_detail .blog_content {
+    margin-top: 50px;
+    text-align: justify;
+    line-height: 2;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 14px;
+    color: #333;
+}
+
+.blog_detail .blog_content img {
+    width: 100%;
+}
+
+.send_comments {
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.send_comments .send_title {
+    font-size: 22px;
+    color: #fb7299;
+    font-weight: 400;
+    padding: 5px 0;
+    border-bottom: 1px solid #CFD8DC;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.send_comments .visitor_msg {
+    padding: 10px 0;
+}
+
+.send_comments .visitor_msg #comment_name,
+.send_comments .visitor_msg #comment_email,
+.send_comments #comment_code {
+    width: 49.6%;
+    letter-spacing: 1px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 4px 12px;
+    overflow: auto;
+    white-space: pre-wrap;
+    color: #222;
+    background-color: rgb(244, 245, 247);
+    font-size: 14px;
+    vertical-align: baseline;
+    outline: none;
+    border: 1px solid transparent;
+    line-height: 16px;
+    border-radius: 4px;
+    word-break: break-all;
+}
+
+.send_comments #comment_content {
+    resize: none;
+    width: 100%;
+    letter-spacing: 1px;
+    min-height: 76px;
+    max-height: 300px;
+    box-sizing: border-box;
+    padding: 4px 12px;
+    overflow: auto;
+    white-space: pre-wrap;
+    background-color: rgb(244, 245, 247);
+    font-size: 13px;
+    vertical-align: baseline;
+    outline: none;
+    border: 1px solid transparent;
+    line-height: 16px;
+    border-radius: 4px;
+    word-break: break-all;
+}
+
+.send_comments #comment_code {
+    width: 23%;
+}
+
+.send_comments button {
+    width: 70px;
+    right: -80px;
+    top: 0;
+    padding: 4px 15px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 60px;
+    vertical-align: top;
+    cursor: pointer;
+    background-color: #00a1d6;
+    border: 1px solid #00a1d6;
+    transition: .1s;
+    user-select: none;
+    outline: none;
+    float: right;
+    margin-top: 5px;
+}
+
+.send_comments .visitor_msg #comment_name:hover,
+.send_comments .visitor_msg #comment_email:hover,
+.send_comments #comment_code:hover,
+.send_comments #comment_content:hover {
+    background-color: #fff;
+    border-color: #00a1d6;
+}
+
+.send_comments .vcode {
+    display: inline-block;
+    position: relative;
+    top: 12px;
+}
+
+.send_comments #comment_code::-webkit-input-placeholder {
+    font-size: 12px;
+}
+
+.blog-comments {
+    position: relative;
+    width: 710px;
+    margin: 90px auto 20px 20%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #fcc;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.blog-comments {
+    margin-top: 20px;
+}
+
+.blog-comments .comments-num {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.blog-comments .comments-num .a-comments {
+    float: right;
+    border-bottom: 1px solid #333;
+}
+
+.blog-comments .comment {
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.blog-comments .comment .iconfont {
+    float: left;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.blog-comments .comment .comment-c {
+    width: 88%;
+    margin-left: 50px;
+    border: 1px solid #CFD8DC;
+    border-radius: 6px;
+    padding: 10px 8px;
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #666;
+}
+
+.blog-comments .comment .comment-c .visitor-name {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.blog-comments .comment .comment-c .comment-content {
+    color: #222;
+}
+
+.blog-comments .comment .comment-c .reply {
+    cursor: pointer;
+    font-weight: 600;
+}

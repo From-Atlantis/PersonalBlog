@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heartless</title>
+    <link rel="stylesheet" href="/iconfont/iconfont.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/blog_detail.css">
+    <link rel="icon" href="/images/ico.jpg">
+    <script src="/js/vue.min.js"></script>
+    <script src="/js/axios.min.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="/" class="title">Greyの个人博客 - 技术博客</a>
+            <ul class="menu">
+                <li>
+                    <a href="/">
+                        <span class="iconfont">&#xe629;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/sitemap.html">
+                        <span class="iconfont">&#xe617;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/me.html">
+                        <span class="iconfont">&#xe60c;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/guestbook.html">
+                        <span class="iconfont">&#xe61d;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="blog_detail" id="blog_detail">
+        <div class="blog_title">{{title}}</div>
+        <div class="blog_msg">
+            <span class="iconfont">&#xe60d;</span>
+            作者: Grey
+            <span> | </span>
+            <span class="iconfont">&#xe633;</span>
+            浏览: {{views}}
+            <span> | </span>
+            <span class="iconfont">&#xe70b;</span>
+            标签: {{tags}}
+        </div>
+        <div class="blog_content" v-html="content"></div>
+    </div>
+
+    <div class="blog-comments" id="blog_comments">
+        <div class="comments-num">
+            <strong>{{total}}</strong>
+            Comments
+            <span class="a-comments">All Comments</span>
+        </div>
+        <div class="comment" v-for="comment in comments">
+            <span class="iconfont">&#xe808;</span>
+            <div class="comment-c">
+                <span class="visitor-name">{{comment.user_name}}{{comment.options}}</span>
+                发表于
+                <span class="comment-time">{{comment.ctime}}</span>
+                <a v-on:click="reply(comment.id, comment.user_name)" style="position: relative; top: -1px;"
+                    class="reply">reply</a>
+                <div class="comment-content">
+                    {{comment.comments}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="send_comments" id="send_comment">
+        <div class="send_title">发表评论</div>
+        <div class="visitor_msg">
+            <input type="hidden" id="comment_reply" value="-1">
+            <input type="hidden" id="comment_reply_name" value="0">
+            <input type="text" placeholder="昵称" id="comment_name">
+            <input type="text" placeholder="邮箱(评论被回复时你将收到通知)" id="comment_email">
+        </div>
+        <div id="comment_content" contenteditable="true">#发表你的评论#</div>
+        <div style="margin-top: 10px;">
+            <input type=" text" placeholder="验证码(不区分大小写)" id="comment_code">
+            <span v-html="vcode" v-on:click="changeCode()" class="vcode"></span>
+        </div>
+        <button v-on:click="sendComment()">发表</button>
+    </div>
+
+    <div class="content_right" id="content_right">
+        <div class="right_module">
+            <div class="module_title">Grey</div>
+            <div class="nav" id="nav">
+                <div class="nav_c">
+                    <span class="nav_num">{{article_num}}</span>
+                    <span class="nav_name">文章</span>
+                </div>
+                <div class="nav_c">
+                    <span class="nav_num">{{categories_num}}</span>
+                    <span class="nav_name">分类</span>
+                </div>
+            </div>
+            <div class="link-author">
+                <span class="link">
+                    <a href="https://www.jianshu.com/u/fe59025be576" target="blank">
+                        <span class="iconfont">&#xe63d; </span>&nbsp;
+                        简书
+                    </a>
+                </span>
+                <span class="link">
+                    <a href="/">
+                        <span class="iconfont">&#xe612; </span>&nbsp;
+                        简历
+                    </a>
+                </span>
+                <span class="link">
+                    <a href="https://github.com/From-Atlantis" target="blank">
+                        <span class="iconfont">&#xe65e; </span>&nbsp;
+                        github
+                    </a>
+                </span>
+                <span class="link">
+                    <a href="https://juejin.im/user/5d907ee0f265da5bbe2a2729" target="blank">
+                        <span class="iconfont">&#xe63e;</span>&nbsp;
+                        掘金
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="foot_content">
+            <div class="copyright">
+                ©
+                <span>2020</span>
+                <span class="iconfont">&#xe64d;</span>
+                <span>Grey</span>
+            </div>
+            <div class="jishu">
+                <span class="iconfont">&#xe64d;</span>
+                <span>您是第 </span>
+                <span>9392</span>
+                <span> 个访问者</span>
+                <span class="iconfont">&#xe633;</span>
+                <span>总访问量 </span>
+                <span>12932</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/base.js"></script>
+    <script src="/js/blog_detail.js"></script>
+
+</body>
+
+</html>
