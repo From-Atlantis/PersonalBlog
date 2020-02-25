@@ -21,6 +21,5 @@ for (let i = 0; i < files.length; i++) {
     }
 }
 
-let king = 'Yona';
 
 module.exports = pathMap;
